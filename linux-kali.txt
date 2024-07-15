@@ -1,0 +1,70 @@
+
+
+docker pull kalilinux/kali-rolling
+
+docker run --tty --interactive kalilinux/kali-rolling
+
+apt update && apt -y install kali-linux-headless
+
+apt update && apt -y install kali-linux-large
+
+sudo apt install nano
+
+NOT: CONTAİNER NETWORK PROBLEMLERİNİ ÖNLEMEK AMACIYLA KENDİ OLUŞTURDUĞUMUZ BİR NETWORK ÜZERİNDEN AYAĞA KALDIRABİLİRİZ.
+
+	docker network create <your-network-name>
+	docker run --network=<your-network-name> ...
+
+NOT : Tor bağlantısıyla anonsurf ile ilgili permisson problemin önüne geçmek için;
+
+	docker run --cap-add=NET_ADMIN ...
+
+	sudo nano /etc/sysctl.d/99-sysctl.conf
+	
+	net.ipv6.conf.all.disable_ipv6 = 0
+	net.ipv6.conf.default.disable_ipv6 = 0
+	net.ipv6.conf.lo.disable_ipv6 = 0
+
+
+========================================================================================
+
+MSFVENOM İLE İLGİLİ SETUPLAR
+
+
+1. curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall
+
+
+2. sudo nano /etc/wsl.conf
+
+	=> [boot]
+	=> systemd=true
+
+
+
+========================================================================================
+
+Nodejs KURULUM
+
+1. curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
+2. sudo apt-get install -y nodejs
+
+
+
+
+========================================================================================
+
+
+UTM VM Önemli Notlar
+
+1. Sağ üst köşede tambur icon tıkla ve sol menüden "serial" olanı seç.
+2. Daha yüksek görüntü kalitesi için UTM ayarlardan display kısmından şunları aktif et.
+	==> Fit to screen
+	==> Retina mod  
+
+3. Emulated display mode seçeneği yine aynı sayfada virtio-ramfb ayarla.
+
+4. Linux ayarlardan display gir ve çözünürlüğü 1440x900 16:10 olarak ayarla.
+
